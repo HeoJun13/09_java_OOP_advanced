@@ -31,7 +31,7 @@ public class UserManager {
 			
 			
 		}
-		else {
+		else { // 2번째 가입자 부터 시작코드
 			
 			System.out.print("[가입] 아이디를 입력하세요 : ");
 			String id = scan.next();

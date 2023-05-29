@@ -44,6 +44,14 @@ public class userManager_필기 {
 				if (!not) {
 					
 					User_필기[] temp = user;
+					user = new User_필기[userCount +1];
+					for (int i = 0; i < userCount; i++) {
+						user[i] = temp[i];
+					}
+					temp = null;
+					
+					user[userCount] = new User_필기();
+					
 					
 				}
 			}
