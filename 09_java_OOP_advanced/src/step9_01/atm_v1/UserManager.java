@@ -15,7 +15,7 @@ public class UserManager {
 	}
 	
 	
-	void addUser() {
+	void addUser() { //첫가입대상?
 		
 		if(userCount == 0) {
 			

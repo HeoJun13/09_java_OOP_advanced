@@ -1,6 +1,6 @@
 package step9_01.atm_v1;
 
-public class Account { // 조회
+public class Account { 
 	
 	String number;
 	int money;
