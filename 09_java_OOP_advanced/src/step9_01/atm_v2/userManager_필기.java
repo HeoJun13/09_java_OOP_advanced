@@ -1,5 +1,6 @@
 package step9_01.atm_v2;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class userManager_필기 {
@@ -14,7 +15,7 @@ public class userManager_필기 {
 			}
 		}
 		
-		void addUser() {
+		void addUser1() {
 			
 			if(userCount == 0) {
 				
@@ -51,13 +52,42 @@ public class userManager_필기 {
 					temp = null;
 					
 					user[userCount] = new User_필기();
+					user[userCount].id = id;
+					System.out.println("[메세지] ID : " + id + "가입 되었습니다.");
+					userCount++;
 					
-					
+				}
+				else {
+					System.out.println("[메세지] ID : " + id + "이미 가입된 ID 입니다.");
 				}
 			}
 			
 			
 		}
+		
+		User_필기 getUser(int idx) {
+			return user[idx];
+			
+		}
+		
+		void logUser() {
+			
+			int identifier = -1;
+			System.out.print("[입력] 아이디를 입력하세요 :");
+			String id = scan.next();
+			
+		 for (int i = 0; i < userCount; i++) {
+			 if (id.equals(user[i].id)) {
+				 identifier = i;
+				 System.out.println();
+			 }
+			
+		}
+			
+			
+			
+		}
+		
 		
 		
 		
