@@ -137,12 +137,24 @@ public class ATM_필기 {
 											
 					}
 				}
-				else if (sel == 3) {
+				userManager_필기.user[idnstifier].accCount--;
 					
 				}
-			userManager_필기.user[idnstifier].accCount--;
+			else if (sel == 3) {
+				
+				if (userManager_필기.user[idnstifier].accCount == 0) {
+					System.out.println("[메세지] 생성된 계좌가 없습니다.");
+					
+				}
+				else {
+					userManager_필기.user[idnstifier].PringAccount();
+				}
 		
 				
+			}
+			else if (sel == 0) {
+				logout();
+				break;
 			}
 			
 		}

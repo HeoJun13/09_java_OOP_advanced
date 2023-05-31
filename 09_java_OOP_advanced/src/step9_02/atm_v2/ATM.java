@@ -2,6 +2,8 @@ package step9_02.atm_v2;
 
 import java.util.Scanner;
 
+import step9_01.atm_v2.userManager_필기;
+
 public class ATM {
 	
 	Scanner scan = new Scanner(System.in);
@@ -52,7 +54,8 @@ public class ATM {
 				FileManager.getInstance().save();
 			}
 			else if (selectMenu == 2) {
-				// 구현해보시오.
+				AccountManager.getInstance().createAcc(identifier);
+				
 			}
 			else if (selectMenu == 3) {
 				AccountManager.getInstance().printAcc(identifier);
