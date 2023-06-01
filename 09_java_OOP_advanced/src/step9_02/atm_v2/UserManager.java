@@ -27,7 +27,7 @@ public class UserManager {
 			}
 			System.out.println();
 		}
-	}
+	} 
 	
 	
 	boolean getCheckAcc(String account) {
