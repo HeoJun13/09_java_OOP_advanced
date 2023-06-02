@@ -2,6 +2,9 @@ package step9_02.atm_v2_필기;
 
 import java.util.Scanner;
 
+import step9_02.atm_v2.FileManager;
+import step9_02.atm_v2.User;
+
 public class userManager_9_2_필기 {
 	
 	private static final boolean Not = false;
@@ -92,16 +95,32 @@ public class userManager_9_2_필기 {
 		
 		if (isResule) {
 			System.out.println("[메세지] 아이디가 중복됩니다.");
-			return;
 		}
 		
 		
 		if (userCnt == 0) {
-			
-			
+			userList = new User_9_2_필기[userCnt+1];
+			userList[userCnt] = new User_9_2_필기();
 		}
+		else {
+			User_9_2_필기[] temp = userList;
+			userList = new User_9_2_필기[userCnt + 1];
+			userList[userCnt] = new User_9_2_필기();
+			
+			for (int i = 0; i < userCnt; i++) {
+				userList[i] = temp[i];
+				
+			}
+			temp = null;	
+		}
+		userList[userCnt].id = id;
+		userList[userCnt].pw = pw;
 		
+		userCnt++;
+		System.out.println("[메세지] 회원가입을 축하합니다");
 		
+		FileManager2.getInstance().save();
+		return;
 		
 	}
 	
