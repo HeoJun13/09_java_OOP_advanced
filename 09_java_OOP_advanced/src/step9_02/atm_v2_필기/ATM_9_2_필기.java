@@ -44,8 +44,19 @@ public class ATM_9_2_필기 {
 		
 		while (true) {
 			
-			System.out.println(" [" + um.userList[indentifier].id + " 님 환영합니다");
-			System.out.println();
+			System.out.println(" [" + um.userList[indentifier].id + " 님 환영합니다]");
+			System.out.println(" [1. 계좌생성],[2. 계좌삭제],[3. 조  회],[4. 회원탈퇴],[0. 로그아웃]");
+			System.out.println("메뉴선택 : ");
+			int sel = scan.nextInt();
+			
+			if (sel == 1) {
+			
+				
+				
+				
+				
+			}
+			
 			
 			
 		}
