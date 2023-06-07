@@ -2,10 +2,11 @@ package step9_02.atm_v2_필기;
 
 import java.util.Scanner;
 
+
 public class ATM_9_2_필기 {
 	
 	Scanner scan = new Scanner(System.in);
-	int indentifier = -1;
+	int identifier = -1;
 	userManager_9_2_필기 um = userManager_9_2_필기.getInstance();
 	
 	void play() {
@@ -32,8 +33,8 @@ public class ATM_9_2_필기 {
 	}
 	
 	void login () {
-		indentifier = um.logUser();
-		if (indentifier != -1) loginMeue();
+		identifier = um.logUser();
+		if (identifier != -1) loginMeue();
 		else {
 			System.out.println("[메세지] 아이디와 패스워드를 확인해주세요");
 	}
@@ -44,8 +45,32 @@ public class ATM_9_2_필기 {
 		
 		while (true) {
 			
-			System.out.println(" [" + um.userList[indentifier].id + " 님 환영합니다");
-			System.out.println();
+			System.out.println(" [" + um.userList[identifier].id + " 님 환영합니다");
+			System.out.println("[1.계정생성],[2.계정삭제],[3.조희],[4.탈퇴],[0.로그아웃],");
+			System.out.print("메뉴선택 : ");
+			int Menu = scan.nextInt();
+			
+			if(Menu == 1 ) {
+				AccountManager2.getIntance().creatAcc(identifier);
+				FileManager2.getInstance().save();
+				
+			}
+			else if(Menu == 2 ) {
+				
+			}
+			else if(Menu == 3 ) {
+				AccountManager2.getIntance().printAcc(identifier);
+			}
+			else if(Menu == 4 ) {
+				identifier = um.deleteUser(identifier);
+			break;
+			}
+			else if(Menu == 0 ) {
+				identifier = -1;
+				System.out.println("로그아웃 되었습니다.");
+			}
+		
+			
 			
 			
 		}

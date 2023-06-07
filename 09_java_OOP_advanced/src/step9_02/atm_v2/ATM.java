@@ -54,7 +54,7 @@ public class ATM {
 				FileManager.getInstance().save();
 			}
 			else if (selectMenu == 2) {
-				AccountManager.getInstance().createAcc(identifier);
+				
 				
 			}
 			else if (selectMenu == 3) {
