@@ -16,7 +16,7 @@ public class userManager_9_2_필기 {
 	}
 	Scanner scan = new Scanner(System.in);
 	
-	final int Acc_Max_CNT = 5;
+	final int Acc_Max_CNT = 3;
 	User_9_2_필기[] userList = null;
 	int userCnt = 0;
 	
@@ -86,9 +86,9 @@ public class userManager_9_2_필기 {
 	
 	void joinMember() { // 중복
 		
-		System.out.println("[로그인]아이디를 입력하세요 : ");
+		System.out.print("[회원가입]아이디를 입력하세요 : ");
 		String id = scan.next();
-		System.out.println("[로그인]패스워드를 입력하세요 : ");
+		System.out.print("[회원가입]패스워드를 입력하세요 : ");
 		String pw = scan.next();
 		
 		boolean isResule = checkID(id);

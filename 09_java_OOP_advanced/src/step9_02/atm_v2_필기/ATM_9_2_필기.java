@@ -47,7 +47,7 @@ public class ATM_9_2_필기 {
 		while (true) {
 			
 		
-			System.out.println(" [" + um.userList[identifier].id + " 님 환영합니다");
+			System.out.println(" [" + um.userList[identifier].id + "]  님 환영합니다");
 			System.out.println("[1.계정생성],[2.계정삭제],[3.조희],[4.탈퇴],[0.로그아웃],");
 			System.out.print("메뉴선택 : ");
 			int Menu = scan.nextInt();
@@ -64,10 +64,11 @@ public class ATM_9_2_필기 {
 			else if(Menu == 3 ) {
 				if (userManager_9_2_필기.getInstance().userList[identifier].accCnt == 0) {
 					System.out.println("[메세지] 생성된 계좌가 없습니다.");
-				} else {
+				}
+				else {
 					AccountManager2.getIntance().printAcc(identifier);
 				}
-				}
+			}
 			
 			else if(Menu == 4 ) {
 				identifier = um.deleteUser(identifier);
@@ -76,6 +77,7 @@ public class ATM_9_2_필기 {
 			else if(Menu == 0 ) {
 				identifier = -1;
 				System.out.println("로그아웃 되었습니다.");
+				return;
 			}
 		
 			

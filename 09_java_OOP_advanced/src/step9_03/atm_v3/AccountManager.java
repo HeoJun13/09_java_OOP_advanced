@@ -15,7 +15,7 @@ public class AccountManager {
 		
 		User loginUser = userManager.userList[userManager.identifier];
 		
-		if (loginUser.accCount == 3) {
+		if (loginUser.accCount == 3) { // 계정3개 까지가능
 			System.out.println("[메세지]더 이상 계좌를 생성할 수 없습니다.\n");
 			return;
 		}

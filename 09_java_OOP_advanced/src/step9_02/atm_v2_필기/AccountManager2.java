@@ -8,6 +8,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import step9_01.atm_v1.UserManager;
+import step9_01.atm_v2.userManager_필기;
 
 
 public class AccountManager2 {
@@ -37,6 +38,7 @@ public class AccountManager2 {
 		String makeAcc = "";
 		while (true) {
 			makeAcc = ran.nextInt(234234)+2819+"";
+			//if (user.getCheckAcc(makeAcc) == false) {
 			if (!user.getCheckAcc(makeAcc)) {
 				break;
 			}
@@ -69,24 +71,29 @@ public class AccountManager2 {
 		}
 		if (user.userList[Identifier].accCnt== 1) { // 계좌가 하나일때 바로 삭제기능.
 			System.out.println("[메세지] 생성하신 계좌 :" + user.userList[Identifier].acc[0].accNumber + "삭제되었습니다.");
+			userManager_9_2_필기.getInstance().userList[Identifier].acc = null;
 		}
 		else  { // 여러개 계좌 직접입력으로 삭제가능.
-			System.out.println("[메세지] 삭제하고싶은 계좌 입력:");
+			System.out.print("[메세지] 삭제하고싶은 계좌 입력:");
 			String AccDelet = scan.next();
 			int tempACCment = userManager_9_2_필기.getInstance().userCnt;
-			int deildet = -1;
+			int delIdx  = -1;
 			for (int i = 0; i < tempACCment; i++) {
 				if (AccDelet.equals(userManager_9_2_필기.getInstance().userList[Identifier].acc[i].accNumber)) {
 					System.out.println("[메세지] 생성하신 계좌 :" + user.userList[Identifier].acc[0].accNumber + "삭제되었습니다.");
 					
-					deildet = 1;
+					delIdx  = i;
 				}
 			}
 			
+			if (delIdx == -1) {
+				System.out.println("[메세지] 작성하신 계좌 확인부탁드립니다.");	
+				return;
+			}
 		}
 		userManager_9_2_필기.getInstance().userList[Identifier].accCnt--;
 		
-	}
+		}
 	
 		
 		
