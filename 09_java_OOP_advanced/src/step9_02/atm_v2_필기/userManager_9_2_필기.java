@@ -124,6 +124,29 @@ public class userManager_9_2_필기 {
 		
 	}
 	
+	int deleteUser(int Identifier) {
+		
+		User_9_2_필기[] temp = userList;
+		userList = new User_9_2_필기[userCnt -1 ];
+		
+		for (int i = 0; i < userCnt; i++) {
+			if (i != Identifier) {
+				userList[i++] = temp[i];
+				
+			}
+		}
+		
+		userCnt --;
+		temp = null;
+		Identifier = -1;
+		
+		System.out.println("[메세지] 탈퇴되었습니다");
+		
+		FileManager2.getInstance().save();
+		return Identifier;
+		
+	}
+	
 	
 
 	public static void main(String[] args) {

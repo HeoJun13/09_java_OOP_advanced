@@ -6,17 +6,9 @@ public class main2 {
 	
  public static void main(String[] args) {
 	 
-	 Scanner sc = new Scanner(System.in);
 	 
-	 			
-		        
-	 int a = 4;
+	new ATM_9_2_필기().play();
 	 
-	 int b = 5;
-	 
-
-		        	
-		        	System.out.println(a + b);
 
 	}
  }

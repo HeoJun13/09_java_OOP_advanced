@@ -2,10 +2,11 @@ package step9_02.atm_v2_필기;
 
 import java.util.Scanner;
 
+
 public class ATM_9_2_필기 {
 	
 	Scanner scan = new Scanner(System.in);
-	int indentifier = -1;
+	int identifier = -1;
 	userManager_9_2_필기 um = userManager_9_2_필기.getInstance();
 	
 	void play() {
@@ -32,11 +33,12 @@ public class ATM_9_2_필기 {
 	}
 	
 	void login () {
-		indentifier = um.logUser();
-		if (indentifier != -1) loginMeue();
+		identifier = um.logUser();
+		if (identifier != -1) loginMeue();
 		else {
 			System.out.println("[메세지] 아이디와 패스워드를 확인해주세요");
 	}
+		
 	}
 	
 	void loginMeue() {
@@ -44,18 +46,38 @@ public class ATM_9_2_필기 {
 		
 		while (true) {
 			
-			System.out.println(" [" + um.userList[indentifier].id + " 님 환영합니다]");
-			System.out.println(" [1. 계좌생성],[2. 계좌삭제],[3. 조  회],[4. 회원탈퇴],[0. 로그아웃]");
-			System.out.println("메뉴선택 : ");
-			int sel = scan.nextInt();
+		
+			System.out.println(" [" + um.userList[identifier].id + " 님 환영합니다");
+			System.out.println("[1.계정생성],[2.계정삭제],[3.조희],[4.탈퇴],[0.로그아웃],");
+			System.out.print("메뉴선택 : ");
+			int Menu = scan.nextInt();
 			
-			if (sel == 1) {
-			
-				
-				
-				
+			if(Menu == 1 ) {
+				AccountManager2.getIntance().creatAcc(identifier);
+				FileManager2.getInstance().save();
 				
 			}
+			else if(Menu == 2 ) {
+				AccountManager2.getIntance().deletAcc(identifier);
+				
+			}
+			else if(Menu == 3 ) {
+				if (userManager_9_2_필기.getInstance().userList[identifier].accCnt == 0) {
+					System.out.println("[메세지] 생성된 계좌가 없습니다.");
+				} else {
+					AccountManager2.getIntance().printAcc(identifier);
+				}
+				}
+			
+			else if(Menu == 4 ) {
+				identifier = um.deleteUser(identifier);
+			break;
+			}
+			else if(Menu == 0 ) {
+				identifier = -1;
+				System.out.println("로그아웃 되었습니다.");
+			}
+		
 			
 			
 			
