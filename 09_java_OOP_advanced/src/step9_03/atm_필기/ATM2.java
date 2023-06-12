@@ -27,10 +27,13 @@ public class ATM2 {
 
 
 	void join() {
+		userManager2.getInstance().joinManager();
+		
 	
 	}
 
 	void login() {
+		userManager2.getInstance().loginManger();
 	
 	}
 
