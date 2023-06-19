@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class userManager2 {
 	
 	private userManager2 () {}
@@ -26,7 +27,7 @@ public class userManager2 {
 	void loginManger() {
 		
 		System.out.println("[로그인] 아이디입력 :");
-		String id = scan.next();
+		String id =scan.next();
 		System.out.println("[로그인] 비밀번호 입력 :");
 		String pw = scan.next();
 		
@@ -103,14 +104,20 @@ public class userManager2 {
 			if (sel == 1) {
 				AccountManager2.getInstance().CreatAccount();
 			}
-			else if (sel == 1) {}
-			else if (sel == 2) {}
-			else if (sel == 3) {}
+			else if (sel == 2) {
+				AccountManager2.getInstance().AccountDeposit();
+			}
+			else if (sel == 3) {
+				AccountManager2.getInstance().AccountWthdr();
+			}
 			else if (sel == 4) {}
 			else if (sel == 5) {}
 			else if (sel == 6) {}
 			else if (sel == 7) {}
-			else if (sel == 0) {}
+			else if (sel == 0) {
+				
+				return;
+			}
 			
 			
 		}
